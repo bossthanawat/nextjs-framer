@@ -1,37 +1,37 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
-import { LoremIpsum } from "../../components/LoremIpsum";
+import { useRef } from "react";
 
 const Framer = () => {
   const ref = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
   });
+
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
+
   const xPosAnim = useTransform(
     scrollYProgress,
     // Map x from these values:
     [0, 0.5, 1],
     // Into these values:
-    [0, 200, 400]
+    [0, 200, 0]
   );
 
   const displayAnim = useTransform(
     scrollYProgress,
-    // Map x from these values:
     [0.5, 1],
-    // Into these values:
     [0, 1]
   );
   return (
     <>
       <motion.div className="progress-bar" style={{ scaleX: scaleX }} />
       <h1>
-        <code>useScroll</code> demo
+        Scroll + Transform Demo
       </h1>
       <div className="flex justify-center items-center h-screen border-solid border-2 border-indigo-600">
         start
