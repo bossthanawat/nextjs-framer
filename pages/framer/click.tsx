@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const Framer = () => {
+const ClickAnimate = () => {
   const [animateX, setAnimateX] = useState(0);
   const handleClickAdd = () => {
     setAnimateX(animateX + 20);
@@ -11,12 +11,12 @@ const Framer = () => {
   };
   return (
     <>
-      <div className="flex  justify-center items-center gap-4">
-        <button className="text-white" onClick={handleClickAdd}>
-          click +
+      <div className="flex justify-center items-center gap-4 mt-4">
+        <button className="btn btn-blue" onClick={handleClickAdd}>
+          Animate +
         </button>
-        <button className="text-white" onClick={handleClickRemove}>
-          click -
+        <button className="btn btn-blue" onClick={handleClickRemove}>
+          Animate -
         </button>
       </div>
       <div className="flex justify-center items-center h-screen gap-2">
@@ -31,4 +31,4 @@ const Framer = () => {
   );
 };
 
-export default Framer;
+export default ClickAnimate;

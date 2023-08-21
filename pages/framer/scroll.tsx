@@ -17,7 +17,7 @@ const Framer = () => {
     // Map x from these values:
     [0, 0.5, 1],
     // Into these values:
-    [0, 200, 0]
+    [0, 200, 400]
   );
 
   const displayAnim = useTransform(
